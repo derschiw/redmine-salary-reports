@@ -1,0 +1,29 @@
+<table>
+  <tbody>
+    <%= Setting.plugin_reports.to_s %>
+    <tr>
+      <th>Stunden pro Arbeitswoche</th>
+      <td>
+        <input type="text" id="settings_week_hours" 
+                           value="<%= settings['week_hours'] %>" 
+                           name="settings[week_hours]" >
+      </td>
+    </tr>
+    <tr>
+      <th>Anzahl Ferienwochen</th>
+      <td>
+        <input type="text" id="settings_weeks_of_per_year" 
+                           value="<%= settings['weeks_of_per_year'] %>" 
+                           name="settings[weeks_of_per_year]" >
+      </td>
+    </tr>
+    <tr>
+      <th>Anzahl Feiertage pro Jahr</th>
+      <td>
+        <input type="text" id="settings_days_of_per_year" 
+                           value="<%= settings['days_of_per_year'] %>" 
+                           name="settings[days_of_per_year]" >
+      </td>
+    </tr>
+  </tbody>
+</table>
