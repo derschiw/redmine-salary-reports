@@ -14,7 +14,6 @@ class Report < ActiveRecord::Base
     self.workload = self.user.custom_field_values.select{|v| v.custom_field.name == "Workload"}.first.value.to_f * 0.01
     self.salary = Setting.plugin_reports[:salary].to_f * self.workload
     self.ahv_rate = Setting.plugin_reports[:ahv_rate].to_f * 0.01
-    self.save!
   end
 
   # Fraction of year considered in the report
