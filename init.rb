@@ -8,5 +8,11 @@ Redmine::Plugin.register :reports do
 
 
   menu :top_menu, :reports, { controller: 'reports', action: 'index' }, caption: 'Reports'
-  settings default: {week_hours: 40, weeks_of_per_year: 6, days_of_per_year: 10}, partial: 'settings/reports_settings'
+  settings default: {
+    week_hours: 40, 
+    weeks_of_per_year: 6, 
+    days_of_per_year: 10,
+    salary: 0,
+    ahv_ahv_rate: 0,
+  }, partial: 'settings/reports_settings'
 end

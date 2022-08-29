@@ -11,6 +11,18 @@
 </p>
 
 <hr>
+<h3><%= t '.salary' %></h3>
+<p>
+  <strong><%= t '.salary' %></strong>: <%= "%0.2f" % @report.salary %>Chf
+</p>
+<p>
+  <strong><%= t '.ahv_estimate' %></strong>: <%= "%0.2f" % @report.ahv_contribution_estimate %>Chf
+</p>
+<p>
+  <strong><%= t '.salary_total' %></strong>: <%= "%0.2f" % @report.salary_total%>Chf
+</p>
+
+<hr>
 
 <h3><%= t '.report_period' %></h3>
 <p>

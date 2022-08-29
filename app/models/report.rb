@@ -12,6 +12,8 @@ class Report < ActiveRecord::Base
     self.days_of_per_year = Setting.plugin_reports[:days_of_per_year] 
     self.start_date = self.user.custom_field_values.select{|v| v.custom_field.name == "Employment Date"}.first.value
     self.workload = self.user.custom_field_values.select{|v| v.custom_field.name == "Workload"}.first.value.to_f * 0.01
+    self.salary = Setting.plugin_reports[:salary].to_f * self.workload
+    self.ahv_rate = Setting.plugin_reports[:ahv_rate].to_f * 0.01
     self.save!
   end
 
@@ -43,6 +45,16 @@ class Report < ActiveRecord::Base
   # Hours worked during period ignoring holidays and days of
   def working_hours_ignoring_holidays(date_from = self.date_from)
     TimeEntry.where(user: self.user, spent_on: date_from..self.date_to).sum{|t| !["Ferien", "Feiertag"].include?(t.activity.name)  ? t.hours : 0}
+  end
+
+  # AHV contributions
+  def ahv_contribution_estimate  
+    self.ahv_rate * self.salary
+  end
+
+  # Total salary (Netto)
+  def salary_total
+    self.salary - self.ahv_contribution_estimate
   end
 
   def calc_overtime_ignoring_holidays(date_from = self.date_from)
