@@ -1,2 +1,15 @@
-<h2>ReportController#index</h2>
-<p>Foo bar </p>
+<h2>Reports (beta)</h2>
+
+<%= link_to "New Report", new_report_path %>
+<br>
+<br>
+<table>
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= link_to "#{I18n.l(report.date_from, format: '%d. %B %Y')} - #{I18n.l(report.date_to, format: '%d. %B %Y')}", report %></td>
+        <td><%= link_to report.user, report.user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
