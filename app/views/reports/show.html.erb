@@ -1,1 +1,65 @@
-<h2>ReportController#show</h2>
+<h2>Report</h2>
+
+<p>
+  <strong><%= t '.user' %></strong>: <%= link_to @report.user, @report.user %>
+</p>
+<p>
+  <strong><%= t '.date_from' %></strong>: <%= I18n.l @report.date_from, format: "%d. %B %Y" %>
+</p>
+<p>
+  <strong><%= t '.date_to' %></strong>: <%= I18n.l @report.date_to, format: "%d. %B %Y" %>
+</p>
+
+<hr>
+
+<h3><%= t '.report_period' %></h3>
+<p>
+<strong><%= t '.working_hours' %></strong>: <%= "%0.2f" % @report.working_hours %>h
+</p>
+<p>
+<strong><%= t '.working_hours_ignoring_holidays' %></strong>: <%= "%0.2f" % @report.working_hours_ignoring_holidays %>h
+</p>
+<p>
+<strong><%= t '.calc_overtime_ignoring_holidays' %></strong>: <%= "%0.2f" % @report.calc_overtime_ignoring_holidays %>h
+</p>
+<p>
+<strong><%= t '.calc_overtime_considering_holidays' %></strong>: <%= "%0.2f" % @report.calc_overtime_considering_holidays %>h
+</p>
+
+<hr>
+
+<h3><%= t '.current_year' %></h3>
+<p>
+  <strong><%= t '.since' %></strong>: <%= I18n.l @report.employment_date, format: "%d. %B %Y" %>
+</p>
+<p>
+<strong><%= t '.calc_overtime_ignoring_holidays_current_year' %></strong>: <%= "%0.2f" % @report.calc_overtime_ignoring_holidays(@report.employment_date) %>
+</p>
+<p>
+<strong><%= t '.calc_overtime_considering_holidays_current_year' %></strong>: <%= "%0.2f" % @report.calc_overtime_considering_holidays(@report.employment_date) %>
+</p>
+<p>
+<strong><%= t '.calc_holidays_taken_current_year' %></strong>: <%= "%0.2f" % @report.calc_holidays_taken(@report.employment_date) %>
+</p>
+<p>
+<strong><%= t '.calc_percentage_holidays_taken_current_year' %></strong>: <%= "%0.2f" % @report.calc_percentage_holidays_taken %>
+</p>
+
+<hr>
+
+<h3><%= t '.report_setup' %></h3>
+<p>
+  <strong><%= t '.week_hours' %></strong>: <%= @report.week_hours %>h
+</p>
+<p>
+  <strong><%= t '.weeks_of_per_year' %></strong>: <%= @report.weeks_of_per_year %>
+</p>
+<p>
+  <strong><%= t '.days_of_per_year' %></strong>: <%= @report.days_of_per_year %>
+</p>
+<p>
+  <strong><%= t '.start_date' %></strong>: <%= I18n.l @report.start_date, format: "%d. %B %Y" %>
+</p>
+<p>
+  <strong><%= t '.workload' %></strong>: <%= @report.workload * 100 %>%
+</p>

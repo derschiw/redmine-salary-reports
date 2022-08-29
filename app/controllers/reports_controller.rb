@@ -1,9 +1,14 @@
 class ReportsController < ApplicationController
-  before_action :set_report, only: %i[ edit update destroy ]
+  before_action :set_report, only: %i[ show edit update destroy ]
 
   # GET /reports or /reports.json
   def index
     @reports = Report.all
+  end
+
+  # GET /reports/:id
+  def show
+  end
 
   # GET /reports/new
   def new
@@ -20,7 +25,7 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.save
-        format.html { redirect_to reports_url, notice: "Report was successfully created." }
+        format.html { redirect_to report_url(@report), notice: "Report was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -31,7 +36,7 @@ class ReportsController < ApplicationController
   def update
     respond_to do |format|
       if @report.update(report_params)
-        format.html { redirect_to reports_url, notice: "Report was successfully updated." }
+        format.html { redirect_to report_url(@report), notice: "Report was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -52,10 +57,9 @@ class ReportsController < ApplicationController
     def set_report
       @report = Report.find(params[:id])
     end
-
     # Only allow a list of trusted parameters through.
     def report_params
       params.require(:report).permit(:date_from, :date_to, :user_id)
     end
-  end
+
 end
