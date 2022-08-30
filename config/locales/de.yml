@@ -1,0 +1,51 @@
+de:
+  reports:
+    index:
+      reports: Reporte
+      reports_title: Reporte (beta)
+      new_report: Report erstellen
+
+    new:
+      new_report: Neuer Report
+
+    show:
+      report: Report
+      user: User*in
+      date_from: Von
+      date_to: Bis
+      salary: Lohn
+      salary_net: Nettolohn
+      ahv_contributions: AHV / IV / EO Beiträge
+      alv_contributions: ALV Beiträge
+      pension_pool_contributions: Pensionskassen Beiträge
+      nbu_contributions: Nichtbetriebsunfallversicherungsbeiträge
+      total_contributions: Beiträge TOTAL
+      salary_gross: Bruttolohn
+      report_period: Zeiterfassung
+      working_hours: Arbeitsstunden
+      working_hours_ignoring_holidays: Arbeitsstunden (abzgl. Ferien)
+      calc_overtime_ignoring_holidays: Überstunden (ohne Ferien)
+      calc_overtime_considering_holidays: Überstunden (mit Ferien)
+      current_year: Aktuelles Jahr
+      since: Berechnet seit
+      calc_overtime_ignoring_holidays_current_year: Überstunden (ohne Ferien)
+      calc_overtime_considering_holidays_current_year: Überstunden (mit Ferien)
+      calc_holidays_taken_current_year: Eingetragene Ferienzeit
+      calc_percentage_holidays_taken_current_year: Prozentuale Ferienzeit bisher
+      report_setup: Report-Infos
+      week_hours: Arbeitswoche 
+      weeks_of_per_year: Anzahl Ferienwochen
+      days_of_per_year: Anzahl Feiertage
+      start_date: Anstellungsdatum
+      workload: Pensum
+
+  settings:
+    reports_settings.erb:
+      salary: Lohn
+      salary_net: Lohn (Netto, 100%)
+      contributions: Beiträge
+      ahv: AHV / IV / EO Satz (%)
+      alv: ALV Satz (%)
+      pension_pool: Pensionskasse Satz Arbeitnehmer(%)
+      nbu: Nichtbetriebsunfallversicherung NBU Satz (%)
+      nbu_frac: NBU zulasten Arbeitnehmer

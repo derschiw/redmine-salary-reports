@@ -28,10 +28,11 @@
   </tbody>
 </table>
 
-<h2>Lohn</h2>
+<h2><%= t('.salary') %></h2>
 <table>
     <tr>
-      <th>Lohn (Netto)</th>
+      <th><%= t('.salary_net') %></th>
+      <th>Lohn (Netto, 100%)</th>
       <td>
         <input type="text" id="settings_salary" 
                            value="<%= settings['salary'] %>" 
@@ -41,10 +42,12 @@
 </table>
 
 <h2>Beiträge</h2>
+<h2><%= t('.contributions') %></h2>
 <table>
   <tbody>
     <tr>
       <th>AHV / IV / EO Satz(%)</th>
+      <th><%= t('.ahv') %></th>
       <td>
         <input type="text" id="settings_ahv_rate" 
                            value="<%= settings['ahv_rate'] %>" 
@@ -53,6 +56,7 @@
     </tr>
     <tr>
       <th>ALV Satz(%)</th>
+      <th><%= t('.alv') %></th>
       <td>
         <input type="text" id="settings_alv_rate" 
                            value="<%= settings['alv_rate'] %>" 
@@ -61,6 +65,7 @@
     </tr>
     <tr>
       <th>Pensionskasse Satz Arbeitnehmer(%)</th>
+      <th><%= t('.pension_pool') %></th>
       <td>
         <input type="text" id="settings_pension_pool_rate" 
                            value="<%= settings['pension_pool_rate'] %>" 
@@ -69,6 +74,7 @@
     </tr>
     <tr>
       <th>Nichtbetriebsunfallversicherung NBU Satz (%)</th>
+      <th><%= t('.nbu') %></th>
       <td>
         <input type="text" id="settings_nbu_rate" 
                            value="<%= settings['nbu_rate'] %>" 
@@ -77,6 +83,7 @@
     </tr>
     <tr>
       <th>NBU zulasten Arbeitnehmer</th>
+      <th><%= t('.nbu_frac') %></th>
       <td>
         <select id="settings_nbu_rate_frac" 
                            name="settings[nbu_rate_frac]" >
