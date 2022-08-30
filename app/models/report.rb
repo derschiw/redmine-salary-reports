@@ -51,9 +51,14 @@ class Report < ActiveRecord::Base
     self.ahv_rate * self.salary
   end
 
-  # Total salary (Netto)
-  def salary_total
-    self.salary - self.ahv_contribution_estimate
+  # Net salary 
+  def salary_net
+    self.salary
+  end
+
+  # Total salary (Gross)
+  def salary_gross
+    self.salary + self.ahv_contribution_estimate
   end
 
   def calc_overtime_ignoring_holidays(date_from = self.date_from)
