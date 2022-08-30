@@ -1,3 +1,51 @@
-# English strings go here for Rails i18n
-en:
-  # my_label: "My label"
+de:
+  reports:
+    index:
+      reports: Reports
+      reports_title: Reports (beta)
+      new_report: New Report
+
+    new:
+      new_report: New Report
+
+    show:
+      report: Report
+      user: User
+      date_from: From
+      date_to: To
+      salary: Salary
+      salary_net: Net Salary
+      ahv_contributions: AHV / IV / EO Contributions
+      alv_contributions: ALV Contributions
+      pension_pool_contributions: Pension Poll Contributions
+      nbu_contributions: Insurance Contributions
+      total_contributions: Contributions TOTAL
+      salary_gross: Gross Salary
+      report_period: Time Records
+      working_hours: Working Hours
+      working_hours_ignoring_holidays: Working Hours (wihout Holidays)
+      calc_overtime_ignoring_holidays: Overtime (without Holidays)
+      calc_overtime_considering_holidays: Overtime (considering Holidays)
+      current_year: Current Year
+      since: Calculated since
+      calc_overtime_ignoring_holidays_current_year: Overtime (without Holidays)
+      calc_overtime_considering_holidays_current_year: Overtime (considering Holidays)
+      calc_holidays_taken_current_year: Recorded Holidays
+      calc_percentage_holidays_taken_current_year: Holidays Taken (%)
+      report_setup: Report-Infos
+      week_hours: Hours per Week
+      weeks_of_per_year: Holiday (Weeks / y)
+      days_of_per_year: Days of per year
+      start_date: Recruitement Date
+      workload: Workload
+
+  settings:
+    reports_settings.erb:
+      salary: Salary
+      salary_net: Salary (Net, 100%)
+      contributions: Contributions
+      ahv: AHV / IV / EO (%)
+      alv: ALV (%)
+      pension_pool: Pension Pool Contribution Employee(%)
+      nbu: Insurance Contributions (%)
+      nbu_frac: Insurance Paid by Employee
