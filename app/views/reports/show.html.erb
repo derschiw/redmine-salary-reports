@@ -42,6 +42,9 @@
 <strong><%= t '.working_hours' %></strong>: <%= "%0.2f" % @report.working_hours %>h
 </p>
 <p>
+<strong><%= t '.holidays' %></strong>: <%= "%0.2f" % @report.calc_holidays_taken %>h
+</p>
+<p>
 <strong><%= t '.working_hours_ignoring_holidays' %></strong>: <%= "%0.2f" % @report.working_hours_ignoring_holidays %>h
 </p>
 <p>

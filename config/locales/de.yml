@@ -23,6 +23,7 @@ de:
       salary_gross: Bruttolohn
       report_period: Zeiterfassung
       working_hours: Arbeitsstunden
+      holidays: Genommene Ferien
       working_hours_ignoring_holidays: Arbeitsstunden (abzgl. Ferien)
       calc_overtime_ignoring_holidays: Überstunden (ohne Ferien)
       calc_overtime_considering_holidays: Überstunden (mit Ferien)

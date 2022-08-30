@@ -23,6 +23,7 @@ de:
       salary_gross: Gross Salary
       report_period: Time Records
       working_hours: Working Hours
+      holidays: Holidays taken
       working_hours_ignoring_holidays: Working Hours (wihout Holidays)
       calc_overtime_ignoring_holidays: Overtime (without Holidays)
       calc_overtime_considering_holidays: Overtime (considering Holidays)
