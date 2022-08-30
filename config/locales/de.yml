@@ -1,15 +1,15 @@
 de:
   reports:
     index:
-      reports: Reporte
-      reports_title: Reporte (beta)
-      new_report: Report erstellen
+      reports: Lohnabrechnung
+      reports_title: Lohnabrechnung (beta)
+      new_report: Lohnabrechnung erstellen
 
     new:
-      new_report: Neuer Report
+      new_report: Neue Lohnabrechnung
 
     show:
-      report: Report
+      report: Lohnabrechnung
       user: User*in
       date_from: Von
       date_to: Bis
