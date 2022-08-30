@@ -3,7 +3,7 @@ Redmine::Plugin.register :salary_reports do
   author 'Aeneas Meier'
   description 'This plugin creates monthly reports for all employes.'
   version '0.0.1'
-  url 'http://example.com/path/to/plugin'
+  url 'https://github.com/derschiw/redmine-salary-reports'
   author_url 'http://rgb.retikolo.xyz'
 
 

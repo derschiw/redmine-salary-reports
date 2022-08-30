@@ -1,5 +1,7 @@
 # Redmine Reports
 
+This software is beta. There in absolutely no warranty. Use at own risk...
+
 ## Setup
 * Install the gems.
 * Run the migrations. (`rails redmine:plugins NAME=reports RAILS_ENV=production`)
