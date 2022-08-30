@@ -14,6 +14,10 @@ class Report < ActiveRecord::Base
     self.workload = self.user.custom_field_values.select{|v| v.custom_field.name == "Workload"}.first.value.to_f * 0.01
     self.salary = Setting.plugin_reports[:salary].to_f * self.workload
     self.ahv_rate = Setting.plugin_reports[:ahv_rate].to_f * 0.01
+    self.alv_rate = Setting.plugin_reports[:alv_rate].to_f * 0.01
+    self.pension_pool_rate = Setting.plugin_reports[:pension_pool_rate].to_f * 0.01
+    self.nbu_rate = Setting.plugin_reports[:nbu_rate].to_f * 0.01
+    self.nbu_rate_frac = Setting.plugin_reports[:nbu_rate_frac].to_f
   end
 
   # Fraction of year considered in the report
@@ -46,9 +50,49 @@ class Report < ActiveRecord::Base
     TimeEntry.where(user: self.user, spent_on: date_from..self.date_to).sum{|t| !["Ferien", "Feiertag"].include?(t.activity.name)  ? t.hours : 0}
   end
 
+  # AHV rate employee
+  def ahv_rate_employee
+    self.ahv_rate / 2
+  end
+  
   # AHV contributions
-  def ahv_contribution_estimate  
-    self.ahv_rate * self.salary
+  def ahv_contribution  
+    self.salary_net * self.ahv_rate_employee
+  end
+
+  # AHV rate employee
+  def alv_rate_employee
+    self.alv_rate / 2
+  end
+  
+  # ALV contributions
+  def alv_contribution  
+    self.salary_net * self.alv_rate_employee
+  end
+
+  # Pension pool rate employee
+  def pension_pool_rate_employee
+    self.pension_pool_rate
+  end
+  
+  # Pension pool contributions
+  def pension_pool_contribution  
+    self.salary_net * self.pension_pool_rate_employee
+  end
+
+  # Pension pool rate employee
+  def nbu_rate_employee
+    self.nbu_rate * self.nbu_rate_frac
+  end
+  
+  # Pension pool contributions
+  def nbu_contribution  
+    self.salary_net * self.nbu_rate_employee
+  end
+
+  # Summarize all contributions
+  def total_contributions
+    self.ahv_contribution + self.alv_contribution + self.nbu_contribution + self.pension_pool_contribution
   end
 
   # Net salary 
@@ -58,7 +102,7 @@ class Report < ActiveRecord::Base
 
   # Total salary (Gross)
   def salary_gross
-    self.salary + self.ahv_contribution_estimate
+    self.salary + self.total_contributions
   end
 
   def calc_overtime_ignoring_holidays(date_from = self.date_from)

@@ -1,3 +1,4 @@
+<h2>Allgemein</h2>
 <table>
   <tbody>
     <tr>
@@ -24,6 +25,11 @@
                            name="settings[days_of_per_year]" >
       </td>
     </tr>
+  </tbody>
+</table>
+
+<h2>Lohn</h2>
+<table>
     <tr>
       <th>Lohn (Netto)</th>
       <td>
@@ -32,12 +38,52 @@
                            name="settings[salary]" >
       </td>
     </tr>
+</table>
+
+<h2>Beiträge</h2>
+<table>
+  <tbody>
     <tr>
-      <th>AHV Satz(%)</th>
+      <th>AHV / IV / EO Satz(%)</th>
       <td>
         <input type="text" id="settings_ahv_rate" 
                            value="<%= settings['ahv_rate'] %>" 
                            name="settings[ahv_rate]" >
+      </td>
+    </tr>
+    <tr>
+      <th>ALV Satz(%)</th>
+      <td>
+        <input type="text" id="settings_alv_rate" 
+                           value="<%= settings['alv_rate'] %>" 
+                           name="settings[alv_rate]" >
+      </td>
+    </tr>
+    <tr>
+      <th>Pensionskasse Satz Arbeitnehmer(%)</th>
+      <td>
+        <input type="text" id="settings_pension_pool_rate" 
+                           value="<%= settings['pension_pool_rate'] %>" 
+                           name="settings[pension_pool_rate]" >
+      </td>
+    </tr>
+    <tr>
+      <th>Nichtbetriebsunfallversicherung NBU Satz (%)</th>
+      <td>
+        <input type="text" id="settings_nbu_rate" 
+                           value="<%= settings['nbu_rate'] %>" 
+                           name="settings[nbu_rate]" >
+      </td>
+    </tr>
+    <tr>
+      <th>NBU zulasten Arbeitnehmer</th>
+      <td>
+        <select id="settings_nbu_rate_frac" 
+                           name="settings[nbu_rate_frac]" >
+          <option <%= 'selected' if settings['nbu_rate_frac'] == "1.0" %> value="1.0">100%</option>
+          <option <%= 'selected' if settings['nbu_rate_frac'] == "0.5" %> value="0.5">50%</option>
+          <option <%= 'selected' if settings['nbu_rate_frac'] == "0.0" %> value="0.0">0%</option>
+        </select>
       </td>
     </tr>
   </tbody>

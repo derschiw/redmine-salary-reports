@@ -14,13 +14,25 @@
 <hr>
 <h3><%= t '.salary' %></h3>
 <p>
-  <strong><%= t '.salary' %></strong>: <%= "%0.2f" % @report.salary %>Chf
+  <strong><%= t '.salary_net' %></strong>: <%= "%0.2f" % @report.salary_net %>Chf
 </p>
 <p>
-  <strong><%= t '.ahv_estimate' %></strong>: <%= "%0.2f" % @report.ahv_contribution_estimate %>Chf
+  <strong><%= t '.ahv_contributions' %></strong>: <%= "%0.2f" % @report.ahv_contribution %>Chf (<%= "%0.2f" % (@report.ahv_rate_employee * 100) %>%)
 </p>
 <p>
-  <strong><%= t '.salary_gross' %></strong>: <%= "%0.2f" % @report.salary_gross%>Chf
+  <strong><%= t '.alv_contributions' %></strong>: <%= "%0.2f" % @report.alv_contribution %>Chf (<%= "%0.2f" % (@report.alv_rate_employee * 100) %>%)
+</p>
+<p>
+  <strong><%= t '.pension_pool_contributions' %></strong>: <%= "%0.2f" % @report.pension_pool_contribution %>Chf (<%= "%0.2f" % (@report.pension_pool_rate_employee * 100) %>%)
+</p>
+<p>
+  <strong><%= t '.nbu_contributions' %></strong>: <%= "%0.2f" % @report.nbu_contribution %>Chf (<%= "%0.2f" % (@report.nbu_rate_employee * 100) %>%)
+</p>
+<p>
+  <strong><%= t '.total_contributions' %></strong>: <%= "%0.2f" % @report.total_contributions %>Chf
+</p>
+<p>
+  <strong><%= t '.salary_gross' %></strong>: <%= "%0.2f" % @report.salary_gross %>Chf
 </p>
 
 <hr>
