@@ -1,4 +1,4 @@
-class AddSetupToReports < ActiveRecord::Migration[6.1]
+class AddSetupToReports < ActiveRecord::Migration[5.2]
   def change
     add_column :reports, :week_hours, :decimal
     add_column :reports, :weeks_of_per_year, :decimal
