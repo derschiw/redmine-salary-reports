@@ -1,6 +1,6 @@
-class CreateReports < ActiveRecord::Migration[5.2]
+class CreateSalaryReports < ActiveRecord::Migration[5.2]
   def change
-    create_table :reports do |t|
+    create_table :salary_reports do |t|
       t.references :user, foreign_key: true
       t.datetime :date_from
       t.datetime :date_to

@@ -1,4 +1,4 @@
-class Report < ActiveRecord::Base
+class SalaryReport < ActiveRecord::Base
 
   WEEKS_PER_YEAR = 52.2
 
@@ -7,17 +7,17 @@ class Report < ActiveRecord::Base
 
   # Setup a report using the current settings.
   def setup
-    self.week_hours = Setting.plugin_reports[:week_hours]
-    self.weeks_of_per_year = Setting.plugin_reports[:weeks_of_per_year] 
-    self.days_of_per_year = Setting.plugin_reports[:days_of_per_year] 
+    self.week_hours = Setting.plugin_salary_reports[:week_hours]
+    self.weeks_of_per_year = Setting.plugin_salary_reports[:weeks_of_per_year] 
+    self.days_of_per_year = Setting.plugin_salary_reports[:days_of_per_year] 
     self.start_date = self.user.custom_field_values.select{|v| v.custom_field.name == "Employment Date"}.first.value
     self.workload = self.user.custom_field_values.select{|v| v.custom_field.name == "Workload"}.first.value.to_f * 0.01
-    self.salary = Setting.plugin_reports[:salary].to_f * self.workload
-    self.ahv_rate = Setting.plugin_reports[:ahv_rate].to_f * 0.01
-    self.alv_rate = Setting.plugin_reports[:alv_rate].to_f * 0.01
-    self.pension_pool_rate = Setting.plugin_reports[:pension_pool_rate].to_f * 0.01
-    self.nbu_rate = Setting.plugin_reports[:nbu_rate].to_f * 0.01
-    self.nbu_rate_frac = Setting.plugin_reports[:nbu_rate_frac].to_f
+    self.salary = Setting.plugin_salary_reports[:salary].to_f * self.workload
+    self.ahv_rate = Setting.plugin_salary_reports[:ahv_rate].to_f * 0.01
+    self.alv_rate = Setting.plugin_salary_reports[:alv_rate].to_f * 0.01
+    self.pension_pool_rate = Setting.plugin_salary_reports[:pension_pool_rate].to_f * 0.01
+    self.nbu_rate = Setting.plugin_salary_reports[:nbu_rate].to_f * 0.01
+    self.nbu_rate_frac = Setting.plugin_salary_reports[:nbu_rate_frac].to_f
   end
 
   # Fraction of year considered in the report

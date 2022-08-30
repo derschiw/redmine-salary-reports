@@ -1,0 +1,16 @@
+<% html_title t('.reports') %>
+<h2><%= t('.reports_title') %></h2>
+
+<%= link_to t(".new_report"), new_salary_report_path %>
+<br>
+<br>
+<table>
+  <tbody>
+    <% @salary_reports.each do |salary_report| %>
+      <tr>
+        <td><%= link_to "#{I18n.l(salary_report.date_from, format: '%d. %B %Y')} - #{I18n.l(salary_report.date_to, format: '%d. %B %Y')}", salary_report %></td>
+        <td><%= link_to salary_report.user, salary_report.user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

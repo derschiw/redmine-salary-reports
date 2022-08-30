@@ -1,0 +1,2 @@
+module SalaryReportHelper
+end
