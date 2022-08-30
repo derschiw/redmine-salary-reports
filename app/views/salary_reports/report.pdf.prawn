@@ -56,7 +56,10 @@ prawn_document do |pdf|
   
   table += [["Arbeitszeit", "%0.2f" % @salary_report.working_hours]]
   table += [["Ferien", "%0.2f" % @salary_report.calc_holidays_taken ]]
-  table += [["Überstunden", "%0.2f" % @salary_report.calc_overtime_ignoring_holidays]]
+  table += [["Überstunden (ohne Ferien)", "%0.2f" % @salary_report.calc_overtime_ignoring_holidays]]
+  table += [["Überstunden (mit Ferien)", "%0.2f" % @salary_report.calc_overtime_considering_holidays]]
+  table += [["Überstunden Jahr (mit Ferien)", "%0.2f" % @salary_report.calc_overtime_ignoring_holidays(@salary_report.employment_date)]]
+  table += [["Überstunden Jahr (ohne Ferien)", "%0.2f" % @salary_report.calc_overtime_considering_holidays(@salary_report.employment_date)]]
 
   pdf.font_size(10) { 
     pdf.table(table) do
