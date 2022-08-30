@@ -1,7 +1,7 @@
 <% html_title "#{I18n.l @salary_report.date_from, format: "%d.%m.%y"} - #{I18n.l @salary_report.date_to, format: "%d.%m.%y"} #{@salary_report.user}" %>
 <h2><%= t('.report') %></h2>
 
-<%= link_to t('.pdf'), "#{salary_report_report_path(@salary_report)}.pdf" %>
+<%= link_to t('.pdf'), "#{salary_report_report_path(@salary_report)}.pdf", target: :_blank %>
 
 <p>
   <strong><%= t '.user' %></strong>: <%= link_to @salary_report.user, @salary_report.user %>
