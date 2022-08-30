@@ -10,6 +10,7 @@ de:
 
     show:
       report: Report
+      pdf: Download PDF
       user: User
       date_from: From
       date_to: To

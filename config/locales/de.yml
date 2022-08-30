@@ -10,6 +10,7 @@ de:
 
     show:
       report: Lohnabrechnung
+      pdf: PDF Downloaden
       user: User*in
       date_from: Von
       date_to: Bis
