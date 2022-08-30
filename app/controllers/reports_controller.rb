@@ -1,6 +1,19 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[ show edit update destroy ]
 
+
+  # GET /reports/:id/report
+  def report
+    @report = Report.find(params[:report_id])
+    respond_to do |format|
+      format.pdf {
+        puts "*"*100
+        puts "Rendering PDF"
+        puts "*"*100
+      }
+    end
+  end
+
   # GET /reports or /reports.json
   def index
     @reports = Report.all.order(id: :asc)
