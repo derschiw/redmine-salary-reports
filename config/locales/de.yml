@@ -40,6 +40,8 @@ de:
       days_of_per_year: Anzahl Feiertage
       start_date: Anstellungsdatum
       workload: Pensum
+      delete: Lohnabrechnung löschen
+      confirm: ACHTUNG - Lohnabrechnungen NIEMALS unbegründet löschen. Bitte nur löschen wenn diese fehlerhaft ist. Bist du sicher, dass du diese Lohnabrechnung löschen möchtest? 
 
   settings:
     reports_settings.erb:

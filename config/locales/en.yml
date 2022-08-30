@@ -40,6 +40,8 @@ de:
       days_of_per_year: Days of per year
       start_date: Recruitement Date
       workload: Workload
+      delete: Delete Salary Report
+      confirm: ATTENTION - do never delete a salary report without having a clear reason. Do only delete faulty reports. Are you sure, that you want to delete this report (can't be ondone)? 
 
   settings:
     reports_settings.erb:
